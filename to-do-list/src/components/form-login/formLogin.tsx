@@ -1,17 +1,14 @@
-type Pessoa = {
-  nome: string;
-  idade: number;
+type Login = {
   email: string;
+  password: string;
 };
-import { FormLogin } from '../../components/form-login/formLogin';
 
-export function Login() {
+export function FormLogin() {
   function printPessoa(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const pessoa: Pessoa = {
-      nome: event.currentTarget.nome.value,
-      idade: +event.currentTarget.idade.value,
+    const pessoa: Login = {
       email: event.currentTarget.email.value,
+      password: event.currentTarget.password.value,
     };
     console.log(pessoa);
 
