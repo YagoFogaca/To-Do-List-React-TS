@@ -4,7 +4,6 @@ import { Label } from '../label-form/label';
 import { inputsData } from '../../utils/data-components/inputs/inputs-login';
 import { SectionForm } from './style-login';
 import { BtnSbumit } from '../btn/btn-submit/btn-submit';
-import { btnData } from '../../utils/data-components/btns/btn-login';
 
 import { UserApi } from '../../utils/api/user-api';
 
@@ -42,17 +41,22 @@ export function FormLogin() {
           );
         })}
         <div className="section-btn">
-          {btnData.map((item, index) => {
-            return (
-              <BtnSbumit
-                key={index}
-                type={'submit'}
-                backgroundP={item.background}
-                text={item.text}
-                className={item.className}
-              />
-            );
-          })}
+          {/* { dados do input de registro
+    type: 'submit',
+    text: 'Cadastro',
+    className: '.btn-register',
+    background: 'rgb(246, 107, 14)',
+  }, */}
+          <BtnSbumit
+            type={'submit'}
+            backgroundP={'rgb(85, 255, 85)'}
+            text={'Login'}
+          />
+          <BtnSbumit
+            type={'submit'}
+            backgroundP={'rgb(246, 107, 14)'}
+            text={'Cadastro'}
+          />
         </div>
       </form>
     </SectionForm>
