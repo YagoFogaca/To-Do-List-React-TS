@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const ButtonSubmit = styled.button`
+  width: 30%;
   border: 1px solid #000;
   border-radius: 5px;
   box-sizing: initial;

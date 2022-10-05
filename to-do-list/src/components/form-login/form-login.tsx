@@ -19,13 +19,20 @@ export function FormLogin() {
     return pessoa;
   }
 
+  interface Item {
+    type: 'submit' | 'reset';
+    text: string;
+    className: string;
+    background?: 'rgb(85, 255, 85)' | 'rgb(246, 107, 14)';
+  }
+
   return (
     <SectionForm>
       <form onSubmit={(event) => printPessoa(event)}>
         {inputsData.map((item, index) => {
           return (
             <>
-              <Label text={item.label} htmlFor={item.idP} />
+              <Label text={item.label} htmlFor={item.idP} key={item.idP} />
               <Input
                 idP={item.idP}
                 nameP={item.nameP}
@@ -43,6 +50,7 @@ export function FormLogin() {
               <BtnSbumit
                 key={index}
                 type={'submit'}
+                backgroundP={item.background}
                 text={item.text}
                 className={item.className}
               />
