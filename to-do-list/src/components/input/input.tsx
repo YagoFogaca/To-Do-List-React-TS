@@ -1,4 +1,5 @@
 import { InputParameter } from '../../utils/types/input-parameter';
+import { InputClass } from './style-input';
 
 export function Input({
   typeP,
@@ -8,12 +9,14 @@ export function Input({
   requiredP,
 }: InputParameter) {
   return (
-    <input
-      type={typeP}
-      name={nameP}
-      id={idP}
-      placeholder={placeholderP}
-      required={requiredP}
-    />
+    <>
+      <InputClass
+        type={typeP}
+        name={nameP}
+        id={idP}
+        placeholder={placeholderP}
+        required={requiredP}
+      />
+    </>
   );
 }
