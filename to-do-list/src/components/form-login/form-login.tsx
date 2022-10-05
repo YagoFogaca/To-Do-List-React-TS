@@ -3,6 +3,8 @@ import { Input } from '../input/input';
 import { Label } from '../label-form/label';
 import { inputsData } from '../../utils/data-components/inputs/inputs-login';
 import { SectionForm } from './style-login';
+import { BtnSbumit } from '../btn/btn-submit/btn-submit';
+import { btnData } from '../../utils/data-components/btns/btn-login';
 
 export function FormLogin() {
   function printPessoa(event: FormEvent<HTMLFormElement>) {
@@ -35,7 +37,18 @@ export function FormLogin() {
             </>
           );
         })}
-        <button type="submit">Login</button>
+        <div className="section-btn">
+          {btnData.map((item, index) => {
+            return (
+              <BtnSbumit
+                key={index}
+                type={'submit'}
+                text={item.text}
+                className={item.className}
+              />
+            );
+          })}
+        </div>
       </form>
     </SectionForm>
   );
