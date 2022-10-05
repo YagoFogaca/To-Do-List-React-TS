@@ -6,17 +6,21 @@ import { SectionForm } from './style-login';
 import { BtnSbumit } from '../btn/btn-submit/btn-submit';
 import { btnData } from '../../utils/data-components/btns/btn-login';
 
+import { UserApi } from '../../utils/api/user-api';
+
 export function FormLogin() {
-  function printPessoa(event: FormEvent<HTMLFormElement>) {
+  async function printPessoa(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    const pessoa = {
+    const user = {
       email: event.currentTarget.email.value,
       password: event.currentTarget.password.value,
     };
-    console.log(pessoa);
 
-    return pessoa;
+    const response = await UserApi.Login(user);
+    localStorage.setItem('token', response.jwToken);
+
+    console.log(localStorage.getItem('token'));
   }
 
   return (
