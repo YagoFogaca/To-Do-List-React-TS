@@ -4,9 +4,13 @@ import { SectionLogin } from './style-login';
 
 export function Login() {
   const [registration, setRegistration] = useState(false);
+  function changePage() {
+    setRegistration(!registration);
+    return registration;
+  }
   return (
     <SectionLogin>
-      <FormLogin />
+      <FormLogin changePage={changePage} />
     </SectionLogin>
   );
 }

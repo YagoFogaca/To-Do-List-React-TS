@@ -5,16 +5,9 @@ import { inputsData } from '../../utils/data-components/inputs/inputs-login';
 import { SectionForm } from './style-login';
 import { BtnSbumit } from '../btn/btn-submit';
 import { BtnOnClick } from '../btn/btn-onClick';
-
 import { UserApi } from '../../utils/api/user-api';
 
-export function FormLogin() {
-  const [registration, setRegistration] = useState(false);
-
-  function changePage() {
-    setRegistration(!registration);
-  }
-
+export function FormLogin({ changePage }: any) {
   async function printPessoa(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
