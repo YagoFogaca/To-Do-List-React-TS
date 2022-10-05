@@ -3,7 +3,7 @@ type Pessoa = {
   idade: number;
   email: string;
 };
-import { FormLogin } from '../../components/form-login/formLogin';
+import { FormLogin } from '../../components/form-login/form-login';
 
 export function Login() {
   function printPessoa(event: React.FormEvent<HTMLFormElement>) {
@@ -20,11 +20,7 @@ export function Login() {
 
   return (
     <>
-      <form onSubmit={(event) => printPessoa(event)}>
-        <input type="email" name="email" id="email" />
-        <input type="password" name="password" id="password" />
-        <button type="submit">Login</button>
-      </form>
+      <FormLogin />
     </>
   );
 }
