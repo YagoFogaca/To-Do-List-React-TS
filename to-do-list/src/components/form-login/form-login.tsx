@@ -3,7 +3,7 @@ import { Input } from '../input/input';
 import { Label } from '../label-form/label';
 import { inputsData } from '../../utils/data-components/inputs/inputs-login';
 import { SectionForm } from './style-login';
-import { BtnSbumit } from '../btn/btn-submit/btn-submit';
+import { BtnSbumit } from '../btn/btn-submit';
 
 import { UserApi } from '../../utils/api/user-api';
 
