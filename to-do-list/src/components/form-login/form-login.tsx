@@ -1,13 +1,20 @@
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { Input } from '../input/input';
 import { Label } from '../label-form/label';
 import { inputsData } from '../../utils/data-components/inputs/inputs-login';
 import { SectionForm } from './style-login';
 import { BtnSbumit } from '../btn/btn-submit';
+import { BtnOnClick } from '../btn/btn-onClick';
 
 import { UserApi } from '../../utils/api/user-api';
 
 export function FormLogin() {
+  const [registration, setRegistration] = useState(false);
+
+  function changePage() {
+    setRegistration(!registration);
+  }
+
   async function printPessoa(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
@@ -19,7 +26,7 @@ export function FormLogin() {
     const response = await UserApi.Login(user);
     localStorage.setItem('token', response.jwToken);
 
-    console.log(localStorage.getItem('token'));
+    localStorage.getItem('token');
   }
 
   return (
@@ -41,18 +48,13 @@ export function FormLogin() {
           );
         })}
         <div className="section-btn">
-          {/* { dados do input de registro
-    type: 'submit',
-    text: 'Cadastro',
-    className: '.btn-register',
-    background: 'rgb(246, 107, 14)',
-  }, */}
           <BtnSbumit
             type={'submit'}
             backgroundP={'rgb(85, 255, 85)'}
             text={'Login'}
           />
-          <BtnSbumit
+          <BtnOnClick
+            onClick={changePage}
             type={'submit'}
             backgroundP={'rgb(246, 107, 14)'}
             text={'Cadastro'}
