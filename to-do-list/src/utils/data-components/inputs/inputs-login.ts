@@ -1,5 +1,6 @@
-export const inputs = [
+export const inputsData = [
   {
+    label: 'Email:',
     typeP: 'email',
     nameP: 'email',
     idP: 'email',
@@ -8,6 +9,7 @@ export const inputs = [
     requiredP: true,
   },
   {
+    label: 'Senha:',
     typeP: 'password',
     nameP: 'password',
     idP: 'password',
