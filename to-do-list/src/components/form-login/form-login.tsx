@@ -19,13 +19,6 @@ export function FormLogin() {
     return pessoa;
   }
 
-  interface Item {
-    type: 'submit' | 'reset';
-    text: string;
-    className: string;
-    background?: 'rgb(85, 255, 85)' | 'rgb(246, 107, 14)';
-  }
-
   return (
     <SectionForm>
       <form onSubmit={(event) => printPessoa(event)}>
