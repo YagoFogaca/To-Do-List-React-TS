@@ -1,6 +1,7 @@
 import { FormEvent } from 'react';
 import { Input } from '../input/input';
 import { inputs } from '../../utils/data-components/inputs/inputs-login';
+import { SectionForm } from './style-login';
 
 export function FormLogin() {
   function printPessoa(event: FormEvent<HTMLFormElement>) {
@@ -16,7 +17,7 @@ export function FormLogin() {
   }
 
   return (
-    <>
+    <SectionForm>
       <form onSubmit={(event) => printPessoa(event)}>
         {inputs.map((item, index) => {
           return (
@@ -32,6 +33,6 @@ export function FormLogin() {
         })}
         <button type="submit">Login</button>
       </form>
-    </>
+    </SectionForm>
   );
 }

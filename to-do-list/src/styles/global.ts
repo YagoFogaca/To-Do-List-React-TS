@@ -7,6 +7,9 @@ export default createGlobalStyle`
         outline: 0;
         box-sizing: border-box;
     }
+    html, body, #root {
+        height: 100%;
+    }
     body{
         background-color: #212121;
         color: #fff;
