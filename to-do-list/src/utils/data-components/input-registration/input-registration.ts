@@ -2,7 +2,7 @@ export const inputsData = [
   {
     label: 'Nome:',
     typeP: 'text',
-    nameP: 'text',
+    nameP: 'userName',
     idP: 'text',
     placeholderP: 'Seu Nome...',
     requiredP: true,

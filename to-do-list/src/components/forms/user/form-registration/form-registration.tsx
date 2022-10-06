@@ -5,13 +5,26 @@ import { inputsData } from '../../../../utils/data-components/input-registration
 import { BtnSbumit } from '../../../btn/btn-submit';
 import { BtnOnClick } from '../../../btn/btn-onClick';
 import { Select } from './style-form';
-import { useState } from 'react';
+import { UserApi } from '../../../../utils/api/user-api';
+import { FormEvent, useState } from 'react';
 
 export function FormCreateUser({ changePage }: any) {
   const [avatar, setAvatar] = useState('./public/user-picture/7.png');
+
+  async function createUser(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const user = {
+      name: event.currentTarget.userName.value,
+      email: event.currentTarget.email.value,
+      password: event.currentTarget.password.value,
+      image: avatar,
+    };
+    const response = await UserApi.CreateUser(user);
+  }
+
   return (
     <>
-      <Form>
+      <Form onSubmit={createUser}>
         <figure>
           <img src={avatar} alt="Avatar" />
         </figure>
