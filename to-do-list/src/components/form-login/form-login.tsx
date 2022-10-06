@@ -46,7 +46,7 @@ export function FormLogin({ changePage }: any) {
           />
           <BtnOnClick
             onClick={changePage}
-            type={'submit'}
+            type={'button'}
             backgroundP={'rgb(246, 107, 14)'}
             text={'Cadastro'}
           />

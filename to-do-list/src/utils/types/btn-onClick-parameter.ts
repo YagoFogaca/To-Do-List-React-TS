@@ -1,5 +1,5 @@
 export type BtnOnClickParameter = {
-  type: 'submit' | 'reset';
+  type: 'submit' | 'reset' | 'button';
   text: string;
   backgroundP: string;
   onClick: React.MouseEventHandler<HTMLButtonElement>;
