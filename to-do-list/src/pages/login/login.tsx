@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { FormLogin } from '../../components/form-login/form-login';
+import { FormLogin } from '../../components/forms/user/form-login/form-login';
 import { SectionLogin } from './style-login';
-import { FormCreateUser } from '../../components/form-registration/form-registration';
+import { FormCreateUser } from '../../components/forms/user/form-registration/form-registration';
 
 export function Login() {
   const [registration, setRegistration] = useState(false);

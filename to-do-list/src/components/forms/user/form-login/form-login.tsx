@@ -1,11 +1,11 @@
 import { FormEvent } from 'react';
-import { Input } from '../input/input';
-import { Label } from '../label-form/label';
-import { inputsData } from '../../utils/data-components/inputs/inputs-login';
-import { Form } from './style-login';
-import { BtnSbumit } from '../btn/btn-submit';
-import { BtnOnClick } from '../btn/btn-onClick';
-import { UserApi } from '../../utils/api/user-api';
+import { Input } from '../../../input/input';
+import { Label } from '../../../label-form/label';
+import { inputsData } from '../../../../utils/data-components/inputs/inputs-login';
+import { Form } from '../style-forms';
+import { BtnSbumit } from '../../../btn/btn-submit';
+import { BtnOnClick } from '../../../btn/btn-onClick';
+import { UserApi } from '../../../../utils/api/user-api';
 
 export function FormLogin({ changePage }: any) {
   async function printPessoa(event: FormEvent<HTMLFormElement>) {

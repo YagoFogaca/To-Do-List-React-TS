@@ -1,9 +1,9 @@
-import { Form } from './style-registration';
-import { Label } from '../label-form/label';
-import { Input } from '../input/input';
-import { inputsData } from '../../utils/data-components/input-registration/input-registration';
-import { BtnSbumit } from '../btn/btn-submit';
-import { BtnOnClick } from '../btn/btn-onClick';
+import { Form } from '../style-forms';
+import { Label } from '../../../label-form/label';
+import { Input } from '../../../input/input';
+import { inputsData } from '../../../../utils/data-components/input-registration/input-registration';
+import { BtnSbumit } from '../../../btn/btn-submit';
+import { BtnOnClick } from '../../../btn/btn-onClick';
 
 export function FormCreateUser({ changePage }: any) {
   return (
