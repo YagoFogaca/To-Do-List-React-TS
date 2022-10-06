@@ -10,7 +10,9 @@ export function Login() {
   }
   return (
     <SectionLogin>
-      <FormLogin changePage={changePage} />
+      <section>
+        <FormLogin changePage={changePage} />
+      </section>
     </SectionLogin>
   );
 }
