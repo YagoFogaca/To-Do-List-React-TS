@@ -4,11 +4,17 @@ import { Input } from '../../../input/input';
 import { inputsData } from '../../../../utils/data-components/input-registration/input-registration';
 import { BtnSbumit } from '../../../btn/btn-submit';
 import { BtnOnClick } from '../../../btn/btn-onClick';
+import { Select } from './style-form';
+import { useState } from 'react';
 
 export function FormCreateUser({ changePage }: any) {
+  const [avatar, setAvatar] = useState('./public/user-picture/7.png');
   return (
     <>
       <Form>
+        <figure>
+          <img src={avatar} alt="Avatar" />
+        </figure>
         {inputsData.map((item, index) => {
           return (
             <>
@@ -24,6 +30,21 @@ export function FormCreateUser({ changePage }: any) {
             </>
           );
         })}
+        <Label text={'Avatar: '} htmlFor={'avatar'} />
+        <Select
+          onChange={(event) => {
+            setAvatar(event.currentTarget.value);
+          }}
+        >
+          <option value="./public/user-picture/7.png"></option>
+          <option value="./public/user-picture/1.png">Avatar - 1</option>
+          <option value="./public/user-picture/2.png">Avatar - 2</option>
+          <option value="./public/user-picture/3.png">Avatar - 3</option>
+          <option value="./public/user-picture/4.png">Avatar - 4</option>
+          <option value="./public/user-picture/5.png">Avatar - 5</option>
+          <option value="./public/user-picture/6.png">Avatar - 6</option>
+          <option value="./public/user-picture/7.png">Avatar - 7</option>
+        </Select>
         <div className="section-btn">
           <BtnSbumit
             type={'submit'}

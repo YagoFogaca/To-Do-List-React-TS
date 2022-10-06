@@ -7,6 +7,16 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 2rem;
 
+  figure {
+    display: flex;
+    justify-content: center;
+  }
+
+  img {
+    border-radius: 100%;
+    width: 100px;
+  }
+
   .section-btn {
     display: flex;
     justify-content: space-evenly;
