@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { FormLogin } from '../../components/form-login/form-login';
 import { SectionLogin } from './style-login';
+import { FormCreateUser } from '../../components/form-registration/form-registration';
 
 export function Login() {
   const [registration, setRegistration] = useState(false);
@@ -11,7 +12,11 @@ export function Login() {
   return (
     <SectionLogin>
       <section>
-        <FormLogin changePage={changePage} />
+        {registration ? (
+          <FormCreateUser changePage={changePage} />
+        ) : (
+          <FormLogin changePage={changePage} />
+        )}
       </section>
     </SectionLogin>
   );
