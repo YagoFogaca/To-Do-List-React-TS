@@ -1,4 +1,4 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent } from 'react';
 import { Input } from '../input/input';
 import { Label } from '../label-form/label';
 import { inputsData } from '../../utils/data-components/inputs/inputs-login';
@@ -18,8 +18,6 @@ export function FormLogin({ changePage }: any) {
 
     const response = await UserApi.Login(user);
     localStorage.setItem('token', response.jwToken);
-
-    localStorage.getItem('token');
   }
 
   return (
