@@ -1,6 +1,5 @@
 import { HeaderStyled } from './style-header';
-
-type Image = any;
+import { Image } from '../../utils/types/image-src';
 
 export function Header() {
   const image: Image = localStorage.getItem('img');
