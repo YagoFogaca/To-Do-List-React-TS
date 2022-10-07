@@ -22,9 +22,7 @@ export function FormLogin({ changePage }: any) {
       };
 
       const response = await UserApi.Login(user);
-      console.log(response);
       localStorage.setItem('token', response.jwToken);
-      console.log(response.user.image);
       localStorage.setItem('img', response.user.image);
       navigate('/home');
     } catch (err) {
