@@ -1,4 +1,4 @@
-import { FormEvent } from 'react';
+import { FormEvent, useState } from 'react';
 import { Input } from '../../../input/input';
 import { Label } from '../../../label-form/label';
 import { inputsData } from '../../../../utils/data-components/inputs/inputs-login';
@@ -6,22 +6,29 @@ import { Form } from '../style-forms';
 import { BtnSbumit } from '../../../btn/btn-submit';
 import { BtnOnClick } from '../../../btn/btn-onClick';
 import { UserApi } from '../../../../utils/api/user-api';
+import { MessageError } from '../../../form-message-error/message-error';
 
 export function FormLogin({ changePage }: any) {
+  const [badLogin, setBadLogin] = useState(false);
   async function printPessoa(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    try {
+      const user = {
+        email: event.currentTarget.email.value,
+        password: event.currentTarget.password.value,
+      };
 
-    const user = {
-      email: event.currentTarget.email.value,
-      password: event.currentTarget.password.value,
-    };
-
-    const response = await UserApi.Login(user);
-    localStorage.setItem('token', response.jwToken);
+      const response = await UserApi.Login(user);
+      localStorage.setItem('token', response.jwToken);
+    } catch (err) {
+      console.log(err);
+      setBadLogin(true);
+    }
   }
 
   return (
     <Form onSubmit={(event) => printPessoa(event)}>
+      {badLogin ? <MessageError text={'Email ou senha incorreto'} /> : <></>}
       {inputsData.map((item, index) => {
         return (
           <>
