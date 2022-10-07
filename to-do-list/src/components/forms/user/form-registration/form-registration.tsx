@@ -33,6 +33,9 @@ export function FormCreateUser({ changePage }: any) {
             <>
               <Label text={item.label} htmlFor={item.idP} key={item.idP} />
               <Input
+                validation={() => {
+                  item.validation;
+                }}
                 idP={item.idP}
                 nameP={item.nameP}
                 placeholderP={item.placeholderP}
@@ -49,14 +52,14 @@ export function FormCreateUser({ changePage }: any) {
             setAvatar(event.currentTarget.value);
           }}
         >
-          <option value="./public/user-picture/7.png"></option>
-          <option value="./public/user-picture/1.png">Avatar - 1</option>
-          <option value="./public/user-picture/2.png">Avatar - 2</option>
-          <option value="./public/user-picture/3.png">Avatar - 3</option>
-          <option value="./public/user-picture/4.png">Avatar - 4</option>
-          <option value="./public/user-picture/5.png">Avatar - 5</option>
-          <option value="./public/user-picture/6.png">Avatar - 6</option>
-          <option value="./public/user-picture/7.png">Avatar - 7</option>
+          <option value="/user-picture/7.png"></option>
+          <option value="/user-picture/1.png">Avatar - 1</option>
+          <option value="/user-picture/2.png">Avatar - 2</option>
+          <option value="/user-picture/3.png">Avatar - 3</option>
+          <option value="/user-picture/4.png">Avatar - 4</option>
+          <option value="/user-picture/5.png">Avatar - 5</option>
+          <option value="/user-picture/6.png">Avatar - 6</option>
+          <option value="/user-picture/7.png">Avatar - 7</option>
         </Select>
         <div className="section-btn">
           <BtnSbumit
