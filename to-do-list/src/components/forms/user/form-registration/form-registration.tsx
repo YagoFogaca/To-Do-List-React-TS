@@ -5,6 +5,7 @@ import { BtnSbumit } from '../../../btn/btn-submit';
 import { BtnOnClick } from '../../../btn/btn-onClick';
 import { Select } from './style-form';
 import { UserApi } from '../../../../utils/api/user-api';
+import { MessageError } from '../../../form-message-error/message-error';
 import { FormEvent, useState } from 'react';
 
 export function FormCreateUser({ changePage }: any) {
@@ -52,10 +53,14 @@ export function FormCreateUser({ changePage }: any) {
           <img src={avatar} alt="Avatar" />
         </figure>
 
-        {badRegistration ? <h2>Email já registrado</h2> : <h2></h2>}
+        {badRegistration ? (
+          <MessageError text={'Email já registrado'} />
+        ) : (
+          <></>
+        )}
 
         <Label text={'Nome:'} htmlFor={'text'} />
-        {formMessageName ? <h2>Nome invalido</h2> : <></>}
+        {formMessageName ? <MessageError text={'Nome invalido'} /> : <></>}
         <Input
           validation={messageName}
           idP={'text'}
@@ -75,7 +80,7 @@ export function FormCreateUser({ changePage }: any) {
         />
 
         <Label text={'Senha:'} htmlFor={'password'} />
-        {formMessagePsw ? <h2>Senha invalida</h2> : <></>}
+        {formMessagePsw ? <MessageError text={'Senha invalida'} /> : <></>}
         <Input
           validation={messagePsw}
           idP={'password'}
