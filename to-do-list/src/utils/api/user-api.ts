@@ -13,7 +13,6 @@ export class UserApi {
   }
 
   static async CreateUser(user: CreateUser) {
-    console.log(user);
     const createUser = await fetch(url + 'create-user', {
       method: 'POST',
       headers: new Headers({ 'Content-Type': 'application/json' }),
