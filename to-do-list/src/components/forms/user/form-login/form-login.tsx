@@ -7,9 +7,12 @@ import { BtnSbumit } from '../../../btn/btn-submit';
 import { BtnOnClick } from '../../../btn/btn-onClick';
 import { UserApi } from '../../../../utils/api/user-api';
 import { MessageError } from '../../../form-message-error/message-error';
+import { useNavigate } from 'react-router-dom';
 
 export function FormLogin({ changePage }: any) {
   const [badLogin, setBadLogin] = useState(false);
+  let navigate = useNavigate();
+
   async function printPessoa(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     try {
@@ -19,7 +22,11 @@ export function FormLogin({ changePage }: any) {
       };
 
       const response = await UserApi.Login(user);
+      console.log(response);
       localStorage.setItem('token', response.jwToken);
+      console.log(response.user.image);
+      localStorage.setItem('img', response.user.image);
+      navigate('/home');
     } catch (err) {
       console.log(err);
       setBadLogin(true);
