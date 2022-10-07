@@ -4,5 +4,5 @@ export type InputParameter = {
   idP: string;
   placeholderP: string;
   requiredP: boolean;
-  validation: any;
+  validation?: any;
 };
