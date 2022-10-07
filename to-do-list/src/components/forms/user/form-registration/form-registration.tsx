@@ -10,6 +10,9 @@ import { FormEvent, useState } from 'react';
 
 export function FormCreateUser({ changePage }: any) {
   const [avatar, setAvatar] = useState('./public/user-picture/7.png');
+  const [formMessageName, setFormMessageName] = useState(false);
+  const [formMessagePsw, setFormMessagePsw] = useState(false);
+  const [badRegistration, setBadRegistration] = useState(false);
 
   async function createUser(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -33,9 +36,7 @@ export function FormCreateUser({ changePage }: any) {
             <>
               <Label text={item.label} htmlFor={item.idP} key={item.idP} />
               <Input
-                validation={() => {
-                  item.validation;
-                }}
+                validation={item.validation}
                 idP={item.idP}
                 nameP={item.nameP}
                 placeholderP={item.placeholderP}

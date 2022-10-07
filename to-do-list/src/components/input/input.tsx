@@ -7,10 +7,12 @@ export function Input({
   idP,
   placeholderP,
   requiredP,
+  validation,
 }: InputParameter) {
   return (
     <>
       <InputClass
+        onChange={validation}
         type={typeP}
         name={nameP}
         id={idP}

@@ -6,6 +6,11 @@ export const inputsData = [
     idP: 'text',
     placeholderP: 'Seu Nome...',
     requiredP: true,
+    validation: (event: React.FormEvent<HTMLFormElement>) => {
+      if (event.currentTarget.value.length < 6) {
+        console.log('Ta começando ');
+      }
+    },
   },
   {
     label: 'Email:',
